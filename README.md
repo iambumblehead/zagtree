@@ -4,10 +4,10 @@ zagtree
 
 
 ```javascript
-let tree = balrog_zag.newtree(),
+let tree = zagtree.newtree(),
     seq = { start : 0, end : 30 };
 
-[tree, seq] = balrog_zag.addperiod(tree, seq);
+[tree, seq] = zagtree.addperiod(tree, seq);
 ```
 
 [0]: http://www.bumblehead.com                            "bumblehead"

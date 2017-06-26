@@ -278,27 +278,25 @@ const zagtree = module.exports = (o => {
       throw new Error('invalid period array');
     }
 
-    if (pArr) {
-      decrArr = pArr.sort(o.isnodestartafter);
-      treeArr = (function next (treeArr, decrArr, tree, x, l) {
+    decrArr = pArr.sort(o.isnodestartafter);
+    treeArr = (function next (treeArr, decrArr, tree, x, l) {
 
-        tree = o.newtree(treeOpts);
-        if (decrArr){
-          for (x = 0, l = decrArr.length; x < l; x++) {
-            if (o.istreenodeviable(tree, decrArr[x])) {
-              [tree] = o.addperiod(tree, decrArr[x]);
-            } else {
-              treeArr = next(treeArr, decrArr.slice(x));
-              break;
-            }
-          }          
-        }
-        
-        treeArr.push(tree);
-        return treeArr;
+      tree = o.newtree(treeOpts);
+      if (decrArr){
+        for (x = 0, l = decrArr.length; x < l; x++) {
+          if (o.istreenodeviable(tree, decrArr[x])) {
+            [tree] = o.addperiod(tree, decrArr[x]);
+          } else {
+            treeArr = next(treeArr, decrArr.slice(x));
+            break;
+          }
+        }          
+      }
+      
+      treeArr.push(tree);
+      return treeArr;
 
-      }(treeArr, decrArr));
-    }
+    }(treeArr, decrArr));
 
     return treeArr;
   };

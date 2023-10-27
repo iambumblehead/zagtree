@@ -21,7 +21,7 @@
 // +-----------+
 //
 
-const zagtree = module.exports = (o => {
+export default (o => {
   
   o.node = {
     period : null,

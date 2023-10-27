@@ -2,7 +2,9 @@
 // Timestamp: 2014.08.26-00:34:53 (last modified)  
 // Author(s): Bumblehead (www.bumblehead.com)  
 
-var zagtree = require('../');
+import { describe, it } from 'node:test'
+import assert from 'node:assert/strict'
+import zagtree from './zagtree.js'
 
 describe("zagtree.isnodeoverlap", function () {
   var testsArr = [
@@ -27,7 +29,7 @@ describe("zagtree.isnodeoverlap", function () {
           overlapp = testData[2],
           result = testData[0];
 
-      expect(zagtree.isnodeoverlap(p, overlapp)).toBe(result);
+      assert.strictEqual(zagtree.isnodeoverlap(p, overlapp), result);
     });
   });
 });
@@ -55,7 +57,7 @@ describe("zagtree.isnodebeyond", function () {
           overlapp = testData[2],
           result = testData[0];
 
-      expect(zagtree.isnodebeyond(p, overlapp)).toBe(result);
+      assert.strictEqual(zagtree.isnodebeyond(p, overlapp), result);
     });
   });
 });
@@ -83,8 +85,7 @@ describe("zagtree.isnodeinside", function () {
           overlapp = testData[2],
           result = testData[0];
 
-      expect(zagtree.isnodeinside(p, overlapp)).toBe(result);
+      assert.strictEqual(zagtree.isnodeinside(p, overlapp), result);
     });
   });
 });
-

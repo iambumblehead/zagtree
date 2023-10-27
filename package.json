@@ -1,24 +1,27 @@
 {
   "name": "zagtree",
-  "main": "zagtree",
-  "version": "0.0.2",
+  "main": "zagtree.js",
+  "type": "module",
+  "version": "0.0.3",
   "description": "a zagtree",
   "author": "Chris <chris@bumblehead.com>",
   "license": "MIT",
   "readmeFilename": "README.md",
+  "exports": {
+    "import": "./zagtree.js"
+  },
+  "files": [
+    "./zagtree.js"
+  ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/iambumblehead/zagtree.git"
+    "url": "git+https://github.com/iambumblehead/zagtree.git"
   },
   "keywords": [
     "zag",
     "zagtree"
   ],
-  "devDependencies": {
-    "jasmine": "2.5.3",
-    "jasmine-spec-reporter": "3.2.0"
-  },
   "scripts": {
-    "test": "node node_modules/jasmine/bin/jasmine.js --verbose"
+    "test": "node --test"
   }
 }
